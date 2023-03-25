@@ -66,8 +66,8 @@ export default {
   // name: 'PageName',
 
   setup() {
-    const email = ref("isebarn@gmail.com");
-    const password = ref("blink182");
+    const email = ref("");
+    const password = ref("");
     const store = useAuthenticationStore();
 
     const state = reactive({

@@ -76,9 +76,9 @@ import { useAuthenticationStore } from "../stores/authentication";
 export default {
   // name: 'PageName',
   setup() {
-    const email = ref("a@isebarn.com");
-    const password = ref("blink182");
-    const confirmPassword = ref("blink182");
+    const email = ref("");
+    const password = ref("");
+    const confirmPassword = ref("");
 
     const store = useAuthenticationStore();
 
