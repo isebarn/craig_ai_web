@@ -25,12 +25,14 @@
             @click="setCurrentResponse(item.response_text)"
           >
             <q-item-section>
-              <q-item-label class="text-h6 text-black">{{
-                item.prompt_text
-              }}</q-item-label>
-              <q-item-label class="text-white" caption>{{
-                item.response_text
-              }}</q-item-label>
+              <div class="q-pa-md q-gutter-md">
+                <q-badge outline :label="item.tag1" />
+                <q-badge outline :label="item.tag2" />
+                <q-badge outline :label="item.tag3" />
+              </div>
+              <q-item-label class="text-white" caption>
+                <span v-for="(text, i) in splitString(item.response_text)" :key="i">{{ text }}<br/><br/></span>
+              </q-item-label>
             </q-item-section>
           </q-item>
           <q-separator class="bg-white q-ma-md" />
@@ -92,5 +94,11 @@ export default {
       setCurrentResponse,
     };
   },
+
+  methods: {
+    splitString(myString) {
+      return myString.split(/[.!]/);
+    },
+  }
 };
 </script>
